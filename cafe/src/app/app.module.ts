@@ -10,6 +10,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { MenuComponent } from './components/menu/menu.component';
 import { WaitingComponent } from './components/waiting/waiting.component';
 import { CheckComponent } from './components/check/check.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -19,12 +21,15 @@ import { CheckComponent } from './components/check/check.component';
     RegistrationComponent,
     MenuComponent,
     WaitingComponent,
-    CheckComponent
+    CheckComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
