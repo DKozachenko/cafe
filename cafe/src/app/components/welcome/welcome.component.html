@@ -2,13 +2,17 @@
   <div class="welcome__inner">
     <h1 class="welcome__inner-title">Добро пожаловать!</h1>
 
-    <button mat-raised-button color="primary">
+    <button mat-raised-button
+            color="primary"
+            (click)="openDialog()"
+    >
       Как это работает
       <mat-icon>info</mat-icon>
     </button>
 
-    <button mat-raised-button color="primary"
-      routerLink="registration"
+    <button mat-raised-button
+            color="primary"
+            routerLink="registration"
     >
       Начать
     </button>
