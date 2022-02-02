@@ -1,1 +1,23 @@
-<p>registration works!</p>
+<section class="reg">
+  <div class="reg__inner">
+    <h1 class="reg__inner-title">Как к вам можно обращаться?</h1>
+
+    <form class="form" >
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Имя</mat-label>
+        <input type="email" matInput [formControl]="nameControl" placeholder="Например, Ваня">
+        <mat-error *ngIf="nameControl.hasError('required')">
+          Имя <strong>обязательно</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button
+              color="primary"
+              (click)="goToMenu()"
+              [disabled]="nameControl.invalid"
+      >
+        Продолжить
+      </button>
+    </form>
+  </div>
+</section>

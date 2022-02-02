@@ -11,7 +11,7 @@ export class WelcomeComponent implements OnInit {
 
   constructor(public dialog: MatDialog) {}
 
-  openDialog() {
+  public openDialog(): void {
     this.dialog.open(DialogComponent)
   }
 
