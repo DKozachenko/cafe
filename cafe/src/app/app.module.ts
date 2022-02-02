@@ -10,6 +10,14 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { MenuComponent } from './components/menu/menu.component';
 import { WaitingComponent } from './components/waiting/waiting.component';
 import { CheckComponent } from './components/check/check.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatDialogModule} from "@angular/material/dialog";
+import { DialogComponent } from './components/dialog/dialog.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -19,12 +27,21 @@ import { CheckComponent } from './components/check/check.component';
     RegistrationComponent,
     MenuComponent,
     WaitingComponent,
-    CheckComponent
+    CheckComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
