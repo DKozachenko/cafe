@@ -1,5 +1,6 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MenuService} from "../../services/menu.service";
+import {DishInterface} from "../../interfaces/dish.interface";
 
 @Component({
   selector: 'app-menu',
@@ -7,12 +8,52 @@ import {MenuService} from "../../services/menu.service";
   styleUrls: ['./menu.component.sass']
 })
 export class MenuComponent implements OnInit {
-  public el: ElementRef = new ElementRef<any>('slider')
+  public drinks: DishInterface[] = []
+  public salads: DishInterface[] = []
+  public soups: DishInterface[] = []
+  public desserts: DishInterface[] = []
+  public currentDishes: DishInterface[] = []
+
+  public isLoad: number[] = [0, 0, 0, 0]
+
+  public slideConfig = {"slidesToShow": 4, "slidesToScroll": 1}
 
   constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
+    this.menuService.getSoups()
+      .subscribe((soups: DishInterface[]) => {
+        this.soups = Object.values(soups)
+        this.isLoad[0] = 1
+      })
 
+    this.menuService.getSalads()
+      .subscribe((salads: DishInterface[]) => {
+        this.salads = Object.values(salads)
+        this.isLoad[1] = 1
+      })
+
+    this.menuService.getDesserts()
+      .subscribe((desserts: DishInterface[]) => {
+        this.desserts = Object.values(desserts)
+        this.isLoad[2] = 1
+      })
+
+    this.menuService.getDrinks()
+      .subscribe((drinks: DishInterface[]) => {
+        this.drinks = Object.values(drinks)
+        this.currentDishes = this.drinks
+        this.isLoad[3] = 1
+      })
+  }
+
+  public isLoading(): boolean {
+    let sum = 0
+    for (let i = 0; i < 4; ++i) {
+      sum += this.isLoad[i]
+    }
+
+    return sum == 4
   }
 
   slides = [
@@ -25,30 +66,9 @@ export class MenuComponent implements OnInit {
     {img: "http://placehold.it/350x150/666666"},
     {img: "http://placehold.it/350x150/666666"},
   ];
-  slideConfig = {"slidesToShow": 4, "slidesToScroll": 1};
 
-  addSlide() {
-    this.slides.push({img: "http://placehold.it/350x150/777777"})
-  }
 
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
-  }
 
-  slickInit(e: any) {
-    console.log('slick initialized');
-  }
 
-  breakpoint(e: any) {
-    console.log('breakpoint');
-  }
-
-  afterChange(e: any) {
-    console.log('afterChange');
-  }
-
-  beforeChange(e: any) {
-    console.log('beforeChange');
-  }
 
 }
