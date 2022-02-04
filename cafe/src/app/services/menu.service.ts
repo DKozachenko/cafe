@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class MenuService {
+  public order: DishInterface[] = []
 
   constructor(private http: HttpClient) { }
 

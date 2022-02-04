@@ -26,11 +26,21 @@
           <p class="item__content">{{ item.price |currency}}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary">Заказать</button>
+          <button mat-raised-button color="primary" (click)="orderDish(item)">Заказать</button>
+          <mat-icon #icon>check</mat-icon>
         </mat-card-actions>
       </mat-card>
     </div>
 
   </ngx-slick-carousel>
+
+  <button mat-raised-button
+          color="primary"
+          routerLink="/check"
+          class="slider__next"
+          [disabled]="isOrderEmpty()"
+  >
+    Продолжить
+  </button>
 </section>
 
