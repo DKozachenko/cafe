@@ -1,6 +1,23 @@
-.item
-  border: 1px solid black
+.slider
+  background-color: gray
+  padding: 2rem
 
+  &__nav
+    margin-bottom: 3rem
+
+    display: flex
+    justify-content: space-between
+
+    button
+      display: block
+      width: 100%
+      max-width: 18rem
+
+      font-size: 1.3rem
+
+      padding: .05rem 1rem
+
+.item
   margin: 0 1.5rem
 
   &__content
@@ -10,8 +27,27 @@
 
     margin: 0
 
+::ng-deep.slick-slider
+  display: flex
+  justify-content: center
+
+::ng-deep.slick-list
+  width: 87%
 
 
+::ng-deep.slick-arrow
+  height: 3rem
+  width: 3rem
+  z-index: 5
+
+  &::before
+    font-size: 3rem
+
+::ng-deep.slick-next
+  right: 1.6rem
+
+::ng-deep.slick-prev
+  left: 1.6rem
 
 .example-card
   max-width: 400px
