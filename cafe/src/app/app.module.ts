@@ -21,6 +21,7 @@ import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import { SlickCarouselModule} from "ngx-slick-carousel";
 import {MatCardModule} from "@angular/material/card";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {MatCardModule} from "@angular/material/card";
     FormsModule,
     HttpClientModule,
     SlickCarouselModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [
 
