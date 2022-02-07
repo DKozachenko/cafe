@@ -1,0 +1,46 @@
+<section class="slider">
+  <nav class="slider__nav">
+    <button mat-raised-button color="primary" (click)="currentDishes = drinks">Напитки</button>
+    <button mat-raised-button color="primary" (click)="currentDishes = soups">Супы</button>
+    <button mat-raised-button color="primary" (click)="currentDishes = salads">Салаты</button>
+    <button mat-raised-button color="primary" (click)="currentDishes = desserts">Десерты</button>
+  </nav>
+
+  <ngx-slick-carousel class="carousel"
+                      #slickModal="slick-carousel"
+                      [config]="slideConfig"
+                      *ngIf="isLoading"
+  >
+
+    <div ngxSlickItem
+         class="slide item"
+         *ngFor="let item of currentDishes"
+    >
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="http://placehold.it/200/000000" alt="dish item">
+        <mat-card-content>
+          <p class="item__content">{{ item.description }}</p>
+          <p class="item__content">{{ item.price |currency}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="orderDish(item)">Заказать</button>
+          <mat-icon #icon>check</mat-icon>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </ngx-slick-carousel>
+
+  <button mat-raised-button
+          color="primary"
+          routerLink="/check"
+          class="slider__next"
+          [disabled]="isOrderEmpty()"
+  >
+    Продолжить
+  </button>
+</section>
+

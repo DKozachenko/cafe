@@ -1,0 +1,91 @@
+.slider
+  background-color: gray
+  padding: 2rem
+  height: auto
+
+  &__next
+    display: block
+    width: 100%
+    max-width: 18rem
+
+    font-size: 1.3rem
+
+    padding: .05rem 1rem
+
+    margin: 0 auto
+
+  &__nav
+    margin-bottom: 3rem
+
+    display: flex
+    justify-content: space-between
+
+    button
+      display: block
+      width: 100%
+      max-width: 18rem
+
+      font-size: 1.3rem
+
+      padding: .05rem 1rem
+
+.item
+  margin: 0 1.5rem
+
+  &__content
+    font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif
+    letter-spacing: normal
+    font-size: 1.3rem
+
+    margin: 0
+
+  mat-card-actions
+    display: flex
+    align-items: center
+
+  mat-icon
+    width: 2rem
+    height: 2rem
+    font-size: 1.7rem
+    line-height: 2rem
+    text-align: center
+
+    margin-left: 1rem
+
+    display: none
+
+    background-color: limegreen
+    border-radius: 50%
+
+::ng-deep.slick-slider
+  display: flex
+  justify-content: center
+
+::ng-deep.slick-list
+  width: 87%
+
+
+::ng-deep.slick-arrow
+  height: 3rem
+  width: 3rem
+  z-index: 5
+
+  &::before
+    font-size: 3rem
+
+::ng-deep.slick-next
+  right: 1.6rem
+
+::ng-deep.slick-prev
+  left: 1.6rem
+
+ngx-slick-carousel
+  margin-bottom: 3rem
+
+
+.example-card
+  max-width: 400px
+
+.example-header-image
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg')
+  background-size: cover

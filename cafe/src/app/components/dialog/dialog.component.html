@@ -1,0 +1,29 @@
+<div class="dialog">
+  <h1 mat-dialog-title>Использование</h1>
+  <div mat-dialog-content>
+    <mat-stepper orientation="vertical" #stepper>
+      <mat-step>
+        <ng-template matStepLabel>Регистрация</ng-template>
+
+        <p>При клике на кнопку "Начать" вы попадете на страницу, где необходимо будет ввести свое имя</p>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Выбор блюд</ng-template>
+
+        <p>Далее вы сможете выбрать блюда из нескольких категорий (супы, напитки, салаты, десерты)</p>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Чек</ng-template>
+
+        <p>На следующей странице вы получите свой чек со всеми заказанными блюдами и итоговой суммой</p>
+      </mat-step>
+    </mat-stepper>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close color="primary">Close</button>
+  </div>
+</div>
+
+
