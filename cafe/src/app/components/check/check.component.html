@@ -1,1 +1,37 @@
-<p>check works!</p>
+
+
+<section class="check">
+  <div *ngIf="!isLoad" class="check__inner">
+    <h1 class="check__inner-title">{{ name }}, ваш заказ готов!</h1>
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Ваш заказ</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p *ngFor="let order of orderDish">
+          {{ order.name }} <b>{{ order.price | currency }}</b>
+        </p>
+
+        <p class="order__sum"><span>Итого</span> <b>{{ getSum() | currency }}</b></p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">Оплатить</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <button mat-raised-button
+            color="primary"
+            routerLink="/"
+            class="check__button"
+    >
+      На главную
+    </button>
+
+  </div>
+
+  <div class="spinner" *ngIf="isLoad">
+    <mat-spinner></mat-spinner>
+  </div>
+</section>
